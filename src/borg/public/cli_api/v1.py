@@ -1,4 +1,4 @@
-"""Pydantic models that can parse borg 1.x's CLI output.
+"""Pydantic models that can parse borg 1.x's JSON output.
 
 The two top-level models are:
 
