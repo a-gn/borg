@@ -56,12 +56,12 @@ class ProgressMessage(BaseBorgLogLine):
 
 class ProgressPercent(BaseBorgLogLine):
     operation: int
-    msgid: str | None = pydantic.Field(None)
+    msgid: typing.Optional[str] = pydantic.Field(None)
     finished: bool
-    message: str | None = pydantic.Field(None)
-    current: float | None = pydantic.Field(None)
+    message: typing.Optional[str] = pydantic.Field(None)
+    current: typing.Optional[float] = pydantic.Field(None)
     info: list[str] | None = pydantic.Field(None)
-    total: float | None = pydantic.Field(None)
+    total: typing.Optional[float] = pydantic.Field(None)
     time: float
 
     @pydantic.model_validator(mode="after")
@@ -154,7 +154,7 @@ class _BorgDetailedArchive(_BorgArchive):
     stats: _BorgArchiveStatistics
     limits: _BorgLimitUsage
     command_line: typing.List[str]
-    chunker_params: typing.Any | None = None
+    chunker_params: typing.Optional[typing.Any] = None
 
 
 class BorgCreateResult(pydantic.BaseModel):
